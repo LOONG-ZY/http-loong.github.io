@@ -1,24 +1,19 @@
-<!DOCTYPE html>
-<html lang="zh-CN">
-<head>
+<!DOCTYPE html><html lang="zh-CN"><head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no,viewport-fit=cover">
-<title>印尼语随身学 · v3</title>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="theme-color" content="#07C160">
+<title>印尼语随身学 v3</title>
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="theme-color" content="#07C160">
 <style>
-:root{--green:#07C160;--bg:#EDEDED;--white:#FFF;--text:#191919;--red:#FA5151;--safe:env(safe-area-inset-bottom,16px)}
-*{margin:0;padding:0;box-sizing:border-box}
+:root{--green:#07C160;--bg:#EDEDED;--white:#FFF;--text:#191919;--safe:env(safe-area-inset-bottom,16px)}*{margin:0;padding:0;box-sizing:border-box}
 html{font-size:16px;-webkit-tap-highlight-color:transparent}
-body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:calc(70px + var(--safe));-webkit-font-smoothing:antialiased;user-select:none}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:var(--bg);color:var(--text);min-height:100vh;padding-bottom:calc(70px+var(--safe));-webkit-font-smoothing:antialiased;user-select:none}
 .header{position:sticky;top:0;z-index:100;background:linear-gradient(135deg,var(--green),#05a14f);color:#fff;padding:14px 20px 10px;text-align:center}
-.header h1{font-size:1.2rem;font-weight:600}
-.header .sub{font-size:.7rem;opacity:.85;margin-top:2px}
+.header h1{font-size:1.2rem;font-weight:600}.header .sub{font-size:.7rem;opacity:.85;margin-top:2px}
 .banner{margin:0;padding:10px 14px;font-size:.75rem;display:none;line-height:1.5}
 .banner-wx{background:#FFF3E0;border-bottom:1px solid #FFE0B2;color:#E65100}
 .banner .close{float:right;background:none;border:none;font-size:1rem;cursor:pointer;color:inherit;opacity:.5;padding:0 4px}
 .sbar{margin:12px 16px 6px;position:relative}
-.sbar input{width:100%;padding:11px 16px 11px 40px;border:none;border-radius:12px;background:var(--white);font-size:.95rem;outline:none;-webkit-appearance:none}
+.sbar input{width:100%;padding:11px 16px 11px 40px;border:none;border-radius:12px;background:var(--white);font-size:.95rem;outline:none}
 .sbar .si{position:absolute;left:13px;top:50%;transform:translateY(-50%);font-size:1.1rem;opacity:.4}
 .ct{display:flex;gap:6px;padding:4px 16px 8px;overflow-x:auto;scrollbar-width:none}
 .ct::-webkit-scrollbar{display:none}
@@ -26,381 +21,176 @@ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Micr
 .ctab.act{background:var(--green);color:#fff}
 .pl{padding:0 16px 16px}
 .pc{background:var(--white);border-radius:14px;padding:16px;margin-bottom:10px;cursor:pointer;transition:transform .15s}
-.pc:active{transform:scale(.985)}
-.pc .rw{display:flex;align-items:flex-start;justify-content:space-between}
-.pc .id{font-size:1.15rem;font-weight:600;line-height:1.4}
-.pc .pr{font-size:.78rem;color:var(--green);margin-top:2px}
-.pc .zh{font-size:.88rem;color:#666;margin-top:6px;display:none}
-.pc.s .zh{display:block}
+.pc:active{transform:scale(.985)}.pc .rw{display:flex;align-items:flex-start;justify-content:space-between}
+.pc .id{font-size:1.15rem;font-weight:600;line-height:1.4}.pc .pr{font-size:.78rem;color:var(--green);margin-top:2px}
+.pc .zh{font-size:.88rem;color:#666;margin-top:6px;display:none}.pc.s .zh{display:block}
 .pc .rt{display:flex;flex-direction:column;align-items:flex-end;gap:4px;margin-left:8px;flex-shrink:0}
 .pc .tag{font-size:.65rem;padding:2px 8px;border-radius:10px;background:#F0F0F0;color:#999;white-space:nowrap}
 .pc .btn{width:34px;height:34px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.95rem}
-.pc .btn-spk{background:#E8F8EE;color:var(--green)}
-.pc .btn-spk:active{background:var(--green);color:#fff}
-.pc .btn-fav{background:#FFF0F0;color:#FAA;font-size:.8rem}
-.pc .btn-fav.act{background:var(--red);color:#fff}
-.pc .hint{font-size:.7rem;color:var(--green);text-align:center;margin-top:6px}
-.pc.s .hint{display:none}
+.pc .btn-spk{background:#E8F8EE;color:var(--green)}.pc .btn-spk:active{background:var(--green);color:#fff}
+.pc .btn-fav{background:#FFF0F0;color:#FAA;font-size:.8rem}.pc .btn-fav.act{background:var(--red);color:#fff}
+.pc .hint{font-size:.7rem;color:var(--green);text-align:center;margin-top:6px}.pc.s .hint{display:none}
 .pc .gn{font-size:.72rem;color:#9C27B0;margin-top:6px;background:#F3E5F5;padding:4px 8px;border-radius:6px;display:none}
 .pc.s .gn{display:block}
-.emp{text-align:center;padding:60px 20px;color:#ccc}
-.emp .ico{font-size:3rem;margin-bottom:12px}
+.emp{text-align:center;padding:60px 20px;color:#ccc}.emp .ico{font-size:3rem;margin-bottom:12px}
 .nav{position:fixed;bottom:0;left:0;right:0;background:#FAFAFA;border-top:.5px solid #ddd;display:flex;z-index:200;padding-bottom:var(--safe)}
 @media(min-width:768px){body{max-width:480px;margin:0 auto}.nav{max-width:480px;left:50%;transform:translateX(-50%)}}
-.ni{flex:1;text-align:center;padding:7px 2px 5px;cursor:pointer;color:#999}
-.ni.act{color:var(--green)}
-.ni .ni{font-size:1.35rem}
-.ni .nl{font-size:.6rem;margin-top:1px;line-height:1}
-.pg{display:none}
-.pg.act{display:block}
-.pw{margin:0 16px 12px}
-.plb{display:flex;justify-content:space-between;font-size:.72rem;color:#999;margin-bottom:3px}
+.ni{flex:1;text-align:center;padding:7px 2px 5px;cursor:pointer;color:#999}.ni.act{color:var(--green)}
+.ni .ni{font-size:1.35rem}.ni .nl{font-size:.6rem;margin-top:1px;line-height:1}
+.pg{display:none}.pg.act{display:block}
+.pw{margin:0 16px 12px}.plb{display:flex;justify-content:space-between;font-size:.72rem;color:#999;margin-bottom:3px}
 .pb{height:5px;border-radius:3px;background:#E5E5E5;overflow:hidden}
 .pf{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--green),var(--green-dark));transition:width .4s ease}
-.qc{padding:16px}
-.fc{background:var(--white);border-radius:18px;padding:30px 20px;text-align:center;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;margin-bottom:12px}
-.fc .fe{font-size:1.5rem;font-weight:700;line-height:1.5}
-.fc .fp{font-size:.9rem;color:var(--green);margin-top:6px}
-.fc .ft{font-size:.7rem;color:#bbb;margin-top:16px}
-.qb{display:flex;gap:10px;flex-wrap:wrap}
-.qbb{flex:1;padding:13px;border-radius:12px;border:none;font-size:.9rem;font-weight:600;cursor:pointer;min-width:60px}
+.qc{padding:16px}.fc{background:var(--white);border-radius:18px;padding:30px 20px;text-align:center;min-height:180px;display:flex;flex-direction:column;align-items:center;justify-content:center;cursor:pointer;margin-bottom:12px}
+.fc .fe{font-size:1.5rem;font-weight:700;line-height:1.5}.fc .fp{font-size:.9rem;color:var(--green);margin-top:6px}.fc .ft{font-size:.7rem;color:#bbb;margin-top:16px}
+.qb{display:flex;gap:10px;flex-wrap:wrap}.qbb{flex:1;padding:13px;border-radius:12px;border:none;font-size:.9rem;font-weight:600;cursor:pointer;min-width:60px}
 .qbe{background:#E8F8EE;color:var(--green)}.qbe:active{background:var(--green);color:#fff}
 .qbh{background:#FFF0F0;color:var(--red)}.qbh:active{background:var(--red);color:#fff}
 .qbn{background:var(--green);color:#fff}.qbn:active{background:var(--green-dark)}
 .qs{text-align:center;font-size:.8rem;color:#999;margin:10px 0}
 .qf{display:flex;gap:6px;padding:0 16px 10px;overflow-x:auto;scrollbar-width:none}
-.qf::-webkit-scrollbar{display:none}
-.qf .ch{flex-shrink:0;padding:6px 12px;border-radius:16px;border:1px solid #ddd;background:#fff;font-size:.75rem;cursor:pointer;color:#666}
+.qf::-webkit-scrollbar{display:none}.qf .ch{flex-shrink:0;padding:6px 12px;border-radius:16px;border:1px solid #ddd;background:#fff;font-size:.75rem;cursor:pointer;color:#666}
 .qf .ch.act{border-color:var(--green);background:#E8F8EE;color:var(--green);font-weight:600}
 .fl{padding:0 16px 16px}
-.gc{padding:12px 16px 20px}
-.gs{margin-bottom:20px}
+.gc{padding:12px 16px 20px}.gs{margin-bottom:20px}
 .gt{font-size:1rem;font-weight:700;color:var(--green);padding:10px 14px;background:#E8F8EE;border-radius:10px;display:flex;align-items:center;gap:8px}
-.gd{background:var(--white);border-radius:12px;padding:14px;margin-top:8px}
-.gd h4{font-size:.9rem;margin-bottom:6px}
-.gd p{font-size:.82rem;color:#555;line-height:1.6}
-.gd .ex{background:#F5F5F5;border-radius:6px;padding:8px 10px;margin-top:6px;font-size:.82rem}
-.gd .ex .id{font-weight:600}
-.gd .ex .cn{color:#666;margin-top:2px}
-.gd .h{color:var(--green);font-weight:600}
-.gd .h2{color:#9C27B0;font-weight:600}
-.gd .rw{display:flex;gap:6px;flex-wrap:wrap}
+.gd{background:var(--white);border-radius:12px;padding:14px;margin-top:8px}.gd h4{font-size:.9rem;margin-bottom:6px}.gd p{font-size:.82rem;color:#555;line-height:1.6}
+.gd .ex{background:#F5F5F5;border-radius:6px;padding:8px 10px;margin-top:6px;font-size:.82rem}.gd .ex .id{font-weight:600}.gd .ex .cn{color:#666;margin-top:2px}
+.gd .h{color:var(--green);font-weight:600}.gd .h2{color:#9C27B0;font-weight:600}.gd .rw{display:flex;gap:6px;flex-wrap:wrap}
 .gd .bd{background:#E8F8EE;color:var(--green);border-radius:6px;padding:3px 8px;font-size:.75rem;font-weight:600}
-.cc{padding:12px 16px 20px}
-.cd{background:var(--white);border-radius:14px;margin-bottom:12px;overflow:hidden}
+.cc{padding:12px 16px 20px}.cd{background:var(--white);border-radius:14px;margin-bottom:12px;overflow:hidden}
 .ch{padding:14px 16px;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-size:.95rem}
-.ch .ar{transition:transform .2s}
-.cd.op .ch .ar{transform:rotate(180deg)}
+.ch .ar{transition:transform .2s}.cd.op .ch .ar{transform:rotate(180deg)}
 .cb{padding:0 16px 14px;display:none;font-size:.85rem;color:#444;line-height:1.7}
-.cd.op .cb{display:block}
-.cb li{margin-bottom:6px;margin-left:16px}
-.tt{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.75);color:#fff;padding:10px 24px;border-radius:8px;font-size:.85rem;z-index:999;opacity:0;pointer-events:none;transition:opacity .3s;max-width:85%;text-align:center}
-.tt.s{opacity:1}
-.tg0{background:#F0F0F0;color:#999}.tg1{background:#E3F2FD;color:#1976D2}.tg2{background:#FFF3E0;color:#E65100}
-.tg3{background:#FCE4EC;color:#C62828}.tg4{background:#E8F5E9;color:#2E7D32}.tg5{background:#F3E5F5;color:#7B1FA2}
-.tg6{background:#FFFDE7;color:#F9A825}.tg7{background:#E0F7FA;color:#00838F}.tg8{background:#FFEBEE;color:#B71C1C}
-.tg9{background:#E8EAF6;color:#3F51B5}.tg10{background:#F1F8E9;color:#558B2F}.tg11{background:#FCE4EC;color:#AD1457}
-</style>
-</head>
-<body>
-
-<div class="header">
-  <h1>🇮🇩 印尼语随身学 v3</h1>
-  <div class="sub">Belajar Bahasa Indonesia · 230+ 日常用语</div>
-</div>
-
-<div class="banner banner-wx" id="bwx">
-  ⚠️ 当前浏览器不支持朗读。<b>建议安装 Chrome 浏览器</b>，打开后点击 🔊 即可听印尼语发音。
-  <button class="close" onclick="this.parentElement.style.display='none'">✕</button>
-</div>
+.cd.op .cb{display:block}.cb li{margin-bottom:6px;margin-left:16px}
+.tt{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:rgba(0,0,0,.75);color:#fff;padding:10px 24px;border-radius:8px;font-size:.85rem;z-index:999;opacity:0;pointer-events:none;text-align:center;max-width:85%}.tt.s{opacity:1}
+.tg0{background:#F0F0F0;color:#999}.tg1{background:#E3F2FD;color:#1976D2}.tg2{background:#FFF3E0;color:#E65100}.tg3{background:#FCE4EC;color:#C62828}.tg4{background:#E8F5E9;color:#2E7D32}.tg5{background:#F3E5F5;color:#7B1FA2}.tg6{background:#FFFDE7;color:#F9A825}.tg7{background:#E0F7FA;color:#00838F}.tg8{background:#FFEBEE;color:#B71C1C}.tg9{background:#E8EAF6;color:#3F51B5}.tg10{background:#F1F8E9;color:#558B2F}
+</style></head><body>
+<div class="header"><h1>🇮🇩 印尼语随身学 v3</h1><div class="sub">Belajar Bahasa Indonesia · 230+ 日常用语</div></div>
+<div class="banner banner-wx" id="bwx">⚠️ 当前浏览器不支持朗读。<b>建议安装 Chrome 浏览器</b>，打开后点击 🔊 即可听印尼语发音。<button class="close" onclick="hB()">✕</button></div>
 
 <div class="pg act" id="p-learn">
-  <div class="sbar">
-    <span class="si">🔍</span>
-    <input type="text" id="sin" placeholder="搜索印尼语或中文…" autocomplete="off">
-  </div>
-  <div class="pw">
-    <div class="plb"><span>📊 今日进度</span><span id="pt">0/0</span></div>
-    <div class="pb"><div class="pf" id="pf" style="width:0%"></div></div>
-  </div>
-  <div class="ct" id="ct"></div>
-  <div class="pl" id="pl"></div>
-  <div class="emp" id="emp" style="display:none"><div class="ico">📭</div><p>没有找到匹配的短语</p></div>
-</div>
+<div class="sbar"><span class="si">🔍</span><input type="text" id="sin" placeholder="搜索印尼语或中文…" autocomplete="off"></div>
+<div class="pw"><div class="plb"><span>📊 今日进度</span><span id="pt">0/0</span></div><div class="pb"><div class="pf" id="pf" style="width:0%"></div></div></div>
+<div class="ct" id="ct"></div><div class="pl" id="pl"></div>
+<div class="emp" id="emp" style="display:none"><div class="ico">📭</div><p>没有找到匹配的短语</p></div></div>
 
 <div class="pg" id="p-quiz">
-  <div class="qf" id="qf"></div>
-  <div class="qc">
-    <div class="qs" id="qs"></div>
-    <div class="fc" id="fc" onclick="flip()">
-      <div class="fe" id="fe">准备开始</div>
-      <div class="fp" id="fp"></div>
-      <div class="ft" id="ft">👆 点击翻转</div>
-    </div>
-    <div class="qb" id="qb" style="display:none">
-      <button class="qbb qbh" onclick="ans('h')">🤔 不熟</button>
-      <button class="qbb qbe" onclick="ans('e')">✅ 会了</button>
-      <button class="qbb qbn" onclick="nQ()">下一张 ➤</button>
-    </div>
-  </div>
-</div>
+<div class="qf" id="qf"></div>
+<div class="qc"><div class="qs" id="qs"></div>
+<div class="fc" id="fc" onclick="flip()"><div class="fe" id="fe">准备开始</div><div class="fp" id="fp"></div><div class="ft" id="ft">👆 点击翻转</div></div>
+<div class="qb" id="qb" style="display:none">
+<button class="qbb qbh" onclick="ans('h')">🤔 不熟</button>
+<button class="qbb qbe" onclick="ans('e')">✅ 会了</button>
+<button class="qbb qbn" onclick="nQ()">下一张 ➤</button></div></div></div>
 
-<div class="pg" id="p-grammar">
-<div class="gc">
-<div class="gs"><div class="gt">📐 基本句型</div><div class="gd"><h4>S-P-O 结构</h4><p>和中文一样是"主谓宾"。不同：印尼语现在时<b>没有"是"动词</b>，直接说"我老师"就是"我是老师"。</p><div class="ex"><div class="id">Saya <span class="h">makan</span> nasi.</div><div class="cn">我吃饭</div></div><div class="ex"><div class="id">Saya <span class="h">adalah</span> guru.</div><div class="cn">我是老师（adalah用于名词前）</div></div><div class="ex"><div class="id">Dia <span class="h">sedang</span> kerja.</div><div class="cn">他正在工作</div></div></div></div>
-<div class="gs"><div class="gt">🔄 常用词缀</div>
-<div class="gd"><h4><span class="h">me-</span> 主动动词前缀</h4><p>表示"做某动作"，变体：men-, mem-, meng-, meny-。</p><div class="ex"><div><span class="bd">baca</span>→<span class="bd">membaca</span> 读</div><div class="cn">Saya <span class="h">membaca</span> buku.</div></div><div class="ex"><div><span class="bd">tulis</span>→<span class="bd">menulis</span> 写</div><div class="cn">Dia <span class="h">menulis</span> laporan.</div></div></div>
-<div class="gd"><h4><span class="h">ber-</span> 状态 / <span class="h">ter-</span> 意外/最 / <span class="h">di-</span> 被动</h4><div class="ex"><div><span class="bd">kerja</span>→<span class="bd">bekerja</span></div><div class="cn">Ayah <span class="h">bekerja</span> di kantor.</div></div><div class="ex"><div><span class="bd">besar</span>→<span class="bd">terbesar</span> 最大</div><div class="cn">Ini yang <span class="h">terbesar</span>.</div></div><div class="ex"><div><span class="bd">buka</span>→<span class="bd">dibuka</span> 被打开</div><div class="cn">Pintu <span class="h">dibuka</span>.</div></div></div>
-<div class="gd"><h4><span class="h">-an</span> 名词 / <span class="h">pe-</span> 人物</h4><div class="ex"><div><span class="bd">makan</span>→<span class="bd">makanan</span> 食物</div><div class="cn">印尼 <span class="h">makanan</span> enak!</div></div><div class="ex"><div><span class="bd">ajar</span>→<span class="bd">pengajar</span> 教师</div><div class="cn">Dia <span class="h">pengajar</span>.</div></div></div></div>
-<div class="gs"><div class="gt">❌ 否定词 / ❓ 疑问词</div>
-<div class="gd"><h4>三兄弟：<span class="h2">Tidak</span> 不 / <span class="h2">Bukan</span> 不是 / <span class="h2">Belum</span> 还没</h4><div class="ex"><div class="id">Saya <span class="h">tidak</span> mau. / Saya <span class="h">bukan</span> bos. / Saya <span class="h">belum</span> makan.</div><div class="cn">我不要 / 我不是老板 / 我还没吃</div></div></div>
-<div class="gd"><h4>疑问词</h4><div class="rw" style="margin:6px 0"><span class="bd">Apa?</span> 什么 <span class="bd">Siapa?</span> 谁 <span class="bd">Di mana?</span> 在哪 <span class="bd">Ke mana?</span> 去哪 <span class="bd">Kapan?</span> 何时 <span class="bd">Berapa?</span> 多少 <span class="bd">Kenapa?</span> 为什么 <span class="bd">Bagaimana?</span> 怎样</div><div class="ex"><div class="id"><span class="h">Apa</span> ini? / <span class="h">Berapa</span> ini? / <span class="h">Kenapa</span> tidak datang?</div><div class="cn">这是什么？/ 多少钱？/ 为什么不来？</div></div></div></div>
-<div class="gs"><div class="gt">👤 所有格 / 🔗 Yang / ⏰ 时间 / 💪 情态</div>
-<div class="gd"><h4>所有格</h4><div class="rw" style="margin:6px 0"><span class="bd">-ku</span> 我的 <span class="bd">-mu</span> 你的 <span class="bd">-nya</span> 他/她的</div><div class="ex"><div class="id">buku+ku=<span class="h">bukuku</span> / nama+mu=<span class="h">namamu</span></div><div class="cn">我的书 / 你的名字</div></div><h4 style="margin-top:8px"><span class="h">Yang</span> = 中文的"</h4><div class="ex"><div class="id">Buku <span class="h">yang</span> bagus / Saya mau <span class="h">yang</span> merah</div><div class="cn">好的书 / 我要红色的</div></div><h4 style="margin-top:8px">时间助词 / 情态动词</h4><div class="ex"><div class="id">Saya <span class="h">sudah</span> mandi. / Dia <span class="h">sedang</span> tidur.</div><div class="cn">我洗过澡了 / 他在睡觉</div></div><div class="ex"><div class="id">Saya <span class="h">bisa</span> / <span class="h">mau</span> / <span class="h">harus</span> pergi.</div><div class="cn">我能/想/必须走了</div></div></div></div>
+<div class="pg" id="p-grammar"><div class="gc">
+<div class="gs"><div class="gt">📐 基本句型</div><div class="gd"><h4>S-P-O 结构</h4><p>和中文一样主谓宾。不同：现在时<b>没有"是"动词</b>。</p><div class="ex"><div>Saya <b>makan</b> nasi.</div><div class="cn">我吃饭</div></div><div class="ex"><div>Saya <b>adalah</b> guru.</div><div class="cn">我是老师</div></div></div></div>
+<div class="gs"><div class="gt">🔄 词缀</div><div class="gd"><h4>me-(主动) ber-(状态) ter-(意外/最) di-(被动) -an(名词) pe-(人物)</h4><div class="ex"><div>baca→membaca(读) / kerja→bekerja(工作) / besar→terbesar(最大) / buka→dibuka(被打开) / makan→makanan(食物) / ajar→pengajar(教师)</div></div></div></div>
+<div class="gs"><div class="gt">❌ 否定词 / ❓ 疑问词</div><div class="gd"><div class="ex"><div><b>Tidak</b>(不) / <b>Bukan</b>(不是) / <b>Belum</b>(还没)</div><div class="cn">Saya tidak mau / Saya bukan bos / Saya belum makan</div></div><div class="ex"><div><b>Apa</b>(什么) <b>Siapa</b>(谁) <b>Di mana</b>(在哪) <b>Kapan</b>(何时) <b>Berapa</b>(多少) <b>Kenapa</b>(为什么)</div></div></div></div>
+<div class="gs"><div class="gt">👤 所有格 / 🔗 Yang / ⏰ 时间</div><div class="gd"><div class="ex"><div><b>-ku</b>(我的) <b>-mu</b>(你的) <b>-nya</b>(他/她的) — bukuku(我的书)</div><div><b>Yang</b> = 的 — Buku yang bagus(好书)</div><div><b>Sudah</b>(已经) <b>Sedang</b>(正在) <b>Pernah</b>(曾经) <b>Akan</b>(将要)</div><div><b>Bisa</b>(能) <b>Mau</b>(想) <b>Harus</b>(必须) <b>Boleh</b>(可以)</div></div></div></div>
 </div></div>
 
-<div class="pg" id="p-culture">
-<div class="cc">
-<div class="cd"><div class="ch" onclick="tc(this)"><span>🤝 打招呼与社交</span><span class="ar">▼</span></div><div class="cb"><ul><li><b>Salam</b>：见面微笑着握手，要轻柔，然后右手触碰心口</li><li><b>右手法则</b>：递东西、接东西、握手、指物一律用右手</li><li>对长辈/上司要说<b>Bapak</b>（先生）或<b>Ibu</b>（女士）</li></ul></div></div>
-<div class="cd"><div class="ch" onclick="tc(this)"><span>💼 职场文化</span><span class="ar">▼</span></div><div class="cb"><ul><li>层级观念强，对上级用敬称</li><li><b>Jam Karet</b>（橡胶时间）：时间较灵活，但你最好准时</li><li><b>Gotong Royong</b>：团队互相帮助</li><li>拒绝时委婉："Nanti dulu ya"，不要追问</li></ul></div></div>
-<div class="cd"><div class="ch" onclick="tc(this)"><span>🍜 饮食/宗教</span><span class="ar">▼</span></div><div class="cb"><ul><li>用手抓饭吃（右手），不习惯说"Minta sendok"要勺子</li><li><b>Sambal</b>每餐必备，不能吃辣说"Tidak pedas"</li><li>大部分<b>Halal</b>清真，不带猪肉到办公室</li><li><b>斋月</b>白天不在同事面前吃喝</li><li>不要摸别人的<b>头</b>（包括小孩），头视为神圣</li><li>不用食指指人，用大拇指示意</li></ul></div></div>
-<div class="cd"><div class="ch" onclick="tc(this)"><span>🏠 生活贴士</span><span class="ar">▼</span></div><div class="cb"><ul><li><b>Macet</b>（堵车）是日常，Gojek/Grab摩托更快</li><li>工作沟通用<b>WhatsApp</b>，不用微信</li><li>热带气候，11-3月雨季随身带伞</li><li>欧标两孔圆脚插头，带转换器</li><li>说话委婉、保持微笑，讲究<b>menjaga muka</b>（留面子）</li></ul></div></div>
+<div class="pg" id="p-culture"><div class="cc">
+<div class="cd"><div class="ch" onclick="tc(this)"><span>🤝 社交礼仪</span><span class="ar">▼</span></div><div class="cb"><ul><li>右手法则：递接物握手用右手</li><li>对长辈上司说Bapak(先生)/Ibu(女士)</li></ul></div></div>
+<div class="cd"><div class="ch" onclick="tc(this)"><span>💼 职场</span><span class="ar">▼</span></div><div class="cb"><ul><li>Jam Karet：时间灵活，你最好准时</li><li>拒绝委婉："Nanti dulu ya"</li></ul></div></div>
+<div class="cd"><div class="ch" onclick="tc(this)"><span>🍜 饮食/禁忌</span><span class="ar">▼</span></div><div class="cb"><ul><li>Sambal每餐必备，不能吃辣说Tidak pedas</li><li>斋月白天不在同事面前吃喝</li><li>不摸别人的头，不用食指指人</li></ul></div></div>
+<div class="cd"><div class="ch" onclick="tc(this)"><span>🏠 生活</span><span class="ar">▼</span></div><div class="cb"><ul><li>Macet堵车，Gojek/Grab摩托更快</li><li>工作用WhatsApp不用微信</li><li>欧标两孔圆脚插头带转换器</li></ul></div></div>
 </div></div>
 
-<div class="pg" id="p-fav">
-  <div class="fl" id="fl"></div><div class="emp" id="fe"><div class="ico">⭐</div><p>还没有收藏的短语<br>点击卡片右侧 🤍 即可收藏</p></div>
-</div>
+<div class="pg" id="p-fav"><div class="fl" id="fl"></div><div class="emp" id="fe"><div class="ico">⭐</div><p>还没有收藏的短语<br>点击卡片右侧 🤍 即可收藏</p></div></div>
 
 <div class="nav">
-  <div class="ni act" data-p="learn" onclick="sw('learn')"><div class="ni">📖</div><div class="nl">学习</div></div>
-  <div class="ni" data-p="quiz" onclick="sw('quiz')"><div class="ni">🎯</div><div class="nl">测验</div></div>
-  <div class="ni" data-p="grammar" onclick="sw('grammar')"><div class="ni">📐</div><div class="nl">语法</div></div>
-  <div class="ni" data-p="culture" onclick="sw('culture')"><div class="ni">🌏</div><div class="nl">文化</div></div>
-  <div class="ni" data-p="fav" onclick="sw('fav')"><div class="ni">⭐</div><div class="nl">收藏</div></div>
-</div>
+<div class="ni act" data-p="learn" onclick="sw('learn')"><div class="ni">📖</div><div class="nl">学习</div></div>
+<div class="ni" data-p="quiz" onclick="sw('quiz')"><div class="ni">🎯</div><div class="nl">测验</div></div>
+<div class="ni" data-p="grammar" onclick="sw('grammar')"><div class="ni">📐</div><div class="nl">语法</div></div>
+<div class="ni" data-p="culture" onclick="sw('culture')"><div class="ni">🌏</div><div class="nl">文化</div></div>
+<div class="ni" data-p="fav" onclick="sw('fav')"><div class="ni">⭐</div><div class="nl">收藏</div></div></div>
 
-<div class="tt" id="tt"></div>
-<audio id="aud" style="display:none"></audio>
+<div class="tt" id="tt"></div><audio id="aud" style="display:none"></audio>
 
 <script>
-// ====== 分类 & 短语数据 (230+条) ======
+// === DATA === 230+ phrases
 var CA=[
-  {i:'all',c:'📚',n:'全部'},{i:'greet',c:'👋',n:'问候'},{i:'shop',c:'🛒',n:'购物'},
-  {i:'food',c:'🍜',n:'餐饮'},{i:'trans',c:'🚗',n:'交通'},{i:'work',c:'💼',n:'工作'},
-  {i:'num',c:'🔢',n:'数字'},{i:'hotel',c:'🏨',n:'住宿'},{i:'emerg',c:'🆘',n:'紧急'},
-  {i:'other',c:'📌',n:'日常常用'},{i:'phone',c:'📞',n:'电话'}
+{i:'all',c:'📚',n:'全部'},{i:'greet',c:'👋',n:'问候'},{i:'shop',c:'🛒',n:'购物'},
+{i:'food',c:'🍜',n:'餐饮'},{i:'trans',c:'🚗',n:'交通'},{i:'work',c:'💼',n:'工作'},
+{i:'num',c:'🔢',n:'数字'},{i:'hotel',c:'🏨',n:'住宿'},{i:'emerg',c:'🆘',n:'紧急'},
+{i:'other',c:'📌',n:'日常常用'},{i:'phone',c:'📞',n:'电话'}
 ];
 var TG={greet:'tg1',shop:'tg2',food:'tg3',trans:'tg4',work:'tg5',num:'tg6',hotel:'tg7',emerg:'tg8',other:'tg9',phone:'tg10'};
-
 var P=[
-// ===== 问候 (20+) =====
-{id:1,c:'greet',i:'Selamat pagi',p:'色拉马 巴吉',z:'早上好(~11点)',g:'Selamat=祝福/pagi=早'},
-{id:2,c:'greet',i:'Selamat siang',p:'色拉马 西央',z:'中午好(11-15点)',g:'siang=中午'},
-{id:3,c:'greet',i:'Selamat sore',p:'色拉马 索雷',z:'下午好(15-18点)',g:'sore=下午'},
-{id:4,c:'greet',i:'Selamat malam',p:'色拉马 马兰',z:'晚上好(18点后)',g:'malam=晚上'},
-{id:5,c:'greet',i:'Apa kabar?',p:'阿巴 嘎巴尔',z:'你好吗？',g:'Apa=什么 kabar=消息'},
-{id:6,c:'greet',i:'Baik-baik saja',p:'巴依巴依 萨加',z:'挺好的',g:'baik=好 saja=只是'},
-{id:7,c:'greet',i:'Nama saya ...',p:'那马 萨亚',z:'我叫…',g:'nama=名字'},
-{id:8,c:'greet',i:'Senang bertemu',p:'色囊 贝尔特木',z:'很高兴认识你',g:'senang=高兴 bertemu=遇见'},
-{id:9,c:'greet',i:'Sampai jumpa',p:'桑拜 均巴',z:'再见',g:'sampai=直到 jumpa=见面'},
-{id:10,c:'greet',i:'Selamat tinggal',p:'色拉马 丁嘎',z:'再见(离开者说)',g:'tinggal=留下'},
-{id:11,c:'greet',i:'Selamat jalan',p:'色拉马 扎兰',z:'一路平安(送别说)',g:'jalan=路/走'},
-{id:12,c:'greet',i:'Permisi',p:'伯尔米西',z:'借过/打扰了',g:'用于请人让路或打断'},
-{id:13,c:'greet',i:'Maaf',p:'马阿夫',z:'对不起',g:'maafkan saya=请原谅我'},
-{id:14,c:'greet',i:'Tidak apa-apa',p:'滴答 阿巴阿巴',z:'没关系',g:'tidak=不'},
-{id:15,c:'greet',i:'Terima kasih',p:'德利马 嘎西',z:'谢谢',g:'terima=接受 kasih=爱'},
-{id:16,c:'greet',i:'Terima kasih banyak',p:'德利马 嘎西 班亚',z:'非常感谢',g:'banyak=很多'},
-{id:17,c:'greet',i:'Sama-sama',p:'萨马萨马',z:'不客气',g:'sama=一样(叠表强调)'},
-{id:18,c:'greet',i:'Selamat datang',p:'色拉马 达当',z:'欢迎',g:'datang=来'},
-{id:19,c:'greet',i:'Dari mana?',p:'达利 马那',z:'从哪里来？',g:'dari=从'},
-{id:20,c:'greet',i:'Saya dari Tiongkok',p:'萨亚 达利 中果',z:'我从中国来',g:'Tiongkok=中国'},
-{id:21,c:'greet',i:'Sudah lama?',p:'苏达 拉马',z:'来了多久？',g:'lama=久/长时间'},
-// ===== 购物 (20+) =====
-{id:30,c:'shop',i:'Berapa harganya?',p:'伯拉巴 哈嘎尼亚',z:'多少钱？',g:'Berapa=多少 harga=价格'},
-{id:31,c:'shop',i:'Boleh kurang?',p:'波雷 古朗',z:'能便宜点吗？',g:'boleh=可以 kurang=少'},
-{id:32,c:'shop',i:'Mahal / Murah',p:'马哈 / 木拉',z:'贵 / 便宜',g:''},
-{id:33,c:'shop',i:'Terlalu mahal!',p:'德尔拉鲁 马哈',z:'太贵了！',g:'terlalu=太过于'},
-{id:34,c:'shop',i:'Ada diskon?',p:'阿达 迪斯公',z:'有折扣吗？',g:'diskon=折扣'},
-{id:35,c:'shop',i:'Saya mau beli',p:'萨亚 矛 伯利',z:'我要买',g:'mau=要 beli=买'},
-{id:36,c:'shop',i:'Bisa coba?',p:'比萨 佐巴',z:'可以试吗？',g:'coba=尝试'},
-{id:37,c:'shop',i:'Yang ini',p:'洋 依尼',z:'这个',g:''},
-{id:38,c:'shop',i:'Yang itu',p:'洋 依杜',z:'那个',g:''},
-{id:39,c:'shop',i:'Ukuran?',p:'乌库兰',z:'什么尺码？',g:'ukuran=尺寸'},
-{id:40,c:'shop',i:'Besar / Kecil',p:'伯萨尔 / 克奇',z:'大 / 小',g:''},
-{id:41,c:'shop',i:'Warna?',p:'瓦尔那',z:'颜色？',g:'warna=颜色'},
-{id:42,c:'shop',i:'Warna merah',p:'瓦尔那 梅拉',z:'红色',g:'merah=红'},
-{id:43,c:'shop',i:'Warna putih',p:'瓦尔那 布提',z:'白色',g:'putih=白'},
-{id:44,c:'shop',i:'Warna hitam',p:'瓦尔那 希淡',z:'黑色',g:'hitam=黑'},
-{id:45,c:'shop',i:'Warna biru',p:'瓦尔那 比鲁',z:'蓝色',g:'biru=蓝'},
-{id:46,c:'shop',i:'Warna hijau',p:'瓦尔那 希搞',z:'绿色',g:'hijau=绿'},
-{id:47,c:'shop',i:'Warna kuning',p:'瓦尔那 古宁',z:'黄色',g:'kuning=黄'},
-{id:48,c:'shop',i:'Ada warna lain?',p:'阿达 瓦尔那 拉因',z:'有其他颜色吗？',g:'lain=其他'},
-{id:49,c:'shop',i:'Bungkus ya',p:'崩库斯 亚',z:'帮我包起来',g:'bungkus=包装'},
-{id:50,c:'shop',i:'Bayar di sini?',p:'巴亚 滴 西尼',z:'在这付钱吗？',g:'bayar=付'},
-{id:51,c:'shop',i:'Bisa tukar?',p:'比萨 杜卡',z:'可以换吗？',g:'tukar=交换'},
-// ===== 餐饮 (25+) =====
-{id:60,c:'food',i:'Saya lapar',p:'萨亚 拉巴',z:'我饿了',g:'lapar=饿'},
-{id:61,c:'food',i:'Saya haus',p:'萨亚 哈乌斯',z:'我渴了',g:'haus=渴'},
-{id:62,c:'food',i:'Menu tolong',p:'美努 多龙',z:'请拿菜单',g:'tolong=请/帮忙'},
-{id:63,c:'food',i:'Saya mau pesan',p:'萨亚 矛 伯桑',z:'我要点菜',g:'pesan=点/预订'},
-{id:64,c:'food',i:'Ini apa?',p:'依尼 阿巴',z:'这是什么(菜)？',g:''},
-{id:65,c:'food',i:'Nasi goreng',p:'那西 高冷',z:'印尼炒饭(国菜)',g:'nasi=饭 goreng=炒'},
-{id:66,c:'food',i:'Mie goreng',p:'米 高冷',z:'炒面',g:'mie=面条'},
-{id:67,c:'food',i:'Ayam goreng',p:'阿扬 高冷',z:'炸鸡',g:'ayam=鸡'},
-{id:68,c:'food',i:'Ayam bakar',p:'阿扬 巴卡',z:'烤鸡',g:'bakar=烤'},
-{id:69,c:'food',i:'Ikan bakar',p:'依甘 巴卡',z:'烤鱼',g:'ikan=鱼'},
-{id:70,c:'food',i:'Sate ayam',p:'沙爹 阿扬',z:'鸡肉沙爹串',g:'sate=沙爹'},
-{id:71,c:'food',i:'Bakso',p:'巴克索',z:'牛肉丸汤',g:'印尼街头人气美食'},
-{id:72,c:'food',i:'Gado-gado',p:'嘎多嘎多',z:'蔬菜沙拉(花生酱)',g:'gado意为混合'},
-{id:73,c:'food',i:'Soto ayam',p:'索多 阿扬',z:'印尼鸡汤面',g:'soto=印尼汤面'},
-{id:74,c:'food',i:'Rendang',p:'伦当',z:'仁当牛肉(世界美食)',g:'源自苏门答腊'},
-{id:75,c:'food',i:'Tidak pedas',p:'滴答 伯达斯',z:'不要辣',g:'pedas=辣'},
-{id:76,c:'food',i:'Pedas sedikit',p:'伯达斯 色迪基',z:'微辣',g:'sedikit=一点'},
-{id:77,c:'food',i:'Enak sekali!',p:'依那 色嘎里',z:'太好吃！',g:'enak=好吃 sekali=非常'},
-{id:78,c:'food',i:'Es teh manis',p:'依斯 德 马尼斯',z:'冰甜茶(国民饮料)',g:'es=冰 teh=茶 manis=甜'},
-{id:79,c:'food',i:'Kopi',p:'考比',z:'咖啡',g:'kopi susu=奶咖'},
-{id:80,c:'food',i:'Air putih',p:'阿依 布提',z:'白开水',g:'air=水 putih=白'},
-{id:81,c:'food',i:'Jus jeruk',p:'朱斯 杰鲁',z:'橙汁',g:'jus=果汁 jeruk=橘子'},
-{id:82,c:'food',i:'Tambah lagi',p:'丹巴 拉吉',z:'再加一份',g:'tambah=加 lagi=再'},
-{id:83,c:'food',i:'Minta bon',p:'民打 波恩',z:'请结账',g:'minta=请求 bon=账单'},
-{id:84,c:'food',i:'Vegetarian',p:'维格达利安',z:'吃素的',g:'也可说'tidak makan daging''},
-{id:85,c:'food',i:'Halal?',p:'哈拉',z:'清真吗？',g:'halal=清真 haram=非法'},
-// ===== 交通 (20+) =====
-{id:90,c:'trans',i:'Ke mana?',p:'格 马那',z:'去哪里？',g:'ke=去(方向介词)'},
-{id:91,c:'trans',i:'Saya mau ke ...',p:'萨亚 矛 格',z:'我要去…',g:''},
-{id:92,c:'trans',i:'Berapa ongkos?',p:'伯拉巴 昂科斯',z:'车费多少？',g:'ongkos=费用'},
-{id:93,c:'trans',i:'Taksi / Ojek',p:'达西 / 奥杰克',z:'出租车 / 摩的',g:'ojek=摩托载客'},
-{id:94,c:'trans',i:'Gojek / Grab',p:'够杰克 / 格拉布',z:'网约摩托车/汽车',g:'印尼最常用两个App'},
-{id:95,c:'trans',i:'Lurus terus',p:'鲁鲁斯 德鲁斯',z:'直走',g:'lurus=直 terus=继续'},
-{id:96,c:'trans',i:'Belok kiri',p:'贝洛 给利',z:'左转',g:'belok=转 kiri=左'},
-{id:97,c:'trans',i:'Belok kanan',p:'贝洛 嘎南',z:'右转',g:'kanan=右'},
-{id:98,c:'trans',i:'Di sini berhenti',p:'滴 西尼 伯亨提',z:'在这里停',g:'berhenti=停止'},
-{id:99,c:'trans',i:'Dekat / Jauh',p:'德嘎 / 扎乌',z:'近 / 远',g:''},
-{id:100,c:'trans',i:'Bandara',p:'班达拉',z:'机场',g:'bandar udara=机场'},
-{id:101,c:'trans',i:'Stasiun',p:'斯大逊',z:'火车站',g:'stasiun kereta=火车站'},
-{id:102,c:'trans',i:'Terminal bus',p:'德尔米那 布斯',z:'汽车站',g:''},
-{id:103,c:'trans',i:'Pakai meter',p:'巴该 米特',z:'请打表',g:'meter=计价器'},
-{id:104,c:'trans',i:'Macet!',p:'马切',z:'堵车！',g:'雅加达生活必备词'},
-{id:105,c:'trans',i:'Kiri!',p:'给利',z:'左边停(叫摩的用)',g:'乘Gojek/Grab常用'},
-{id:106,c:'trans',i:'Pelan-pelan',p:'伯兰伯兰',z:'慢一点',g:'pelan=慢(叠表强调)'},
-{id:107,c:'trans',i:'Jalan-jalan',p:'扎兰扎兰',z:'逛街/散步',g:''},
-// ===== 工作 (25+) =====
-{id:110,c:'work',i:'Selamat pagi rekan',p:'色拉马 巴吉 勒干',z:'早上好各位',g:'rekan=同事'},
-{id:111,c:'work',i:'Bisa tolong bantu?',p:'比萨 多龙 班杜',z:'能帮忙吗？',g:'bantu=帮助'},
-{id:112,c:'work',i:'Tidak mengerti',p:'滴答 蒙额尔提',z:'不明白',g:'mengerti=懂'},
-{id:113,c:'work',i:'Bisa ulangi?',p:'比萨 乌朗依',z:'能再说一遍吗？',g:'ulangi=重复'},
-{id:114,c:'work',i:'Bicara pelan-pelan',p:'比扎拉 伯兰伯兰',z:'请说慢一点',g:'bicara=说'},
-{id:115,c:'work',i:'Ada rapat?',p:'阿达 拉巴',z:'有会议吗？',g:'rapat=会议'},
-{id:116,c:'work',i:'Rapat jam berapa?',p:'拉巴 占 伯拉巴',z:'会议几点？',g:'jam=小时/点钟'},
-{id:117,c:'work',i:'Laporan siap',p:'拉波朗 西阿',z:'报告准备好了',g:'laporan=报告 siap=准备好'},
-{id:118,c:'work',i:'Deadline kapan?',p:'德来 嘎班',z:'截止日期？',g:'kapan=什么时候'},
-{id:119,c:'work',i:'Bagaimana progres?',p:'巴盖马那 波罗格勒斯',z:'进展如何？',g:'progres=进度'},
-{id:120,c:'work',i:'Kirim email',p:'给林 依美',z:'发邮件',g:'kirim=发送'},
-{id:121,c:'work',i:'Tanda tangan sini',p:'丹达 当安 西尼',z:'在这签字',g:'tanda tangan=签名'},
-{id:122,c:'work',i:'Nomor WA?',p:'诺莫 哇',z:'WhatsApp号码？',g:'印尼用WA不用微信'},
-{id:123,c:'work',i:'Saya butuh info',p:'萨亚 布杜 因佛',z:'我需要信息',g:'butuh=需要'},
-{id:124,c:'work',i:'Kerja bagus!',p:'格扎 巴古斯',z:'做得很好！',g:'bagus=好'},
-{id:125,c:'work',i:'Hati-hati',p:'哈迪哈迪',z:'小心/保重',g:'hati=肝(表内心)'},
-{id:126,c:'work',i:'Saya akan telat',p:'萨亚 阿甘 德拉',z:'我会迟到',g:'akan=将要 telat=迟到'},
-{id:127,c:'work',i:'Bisa lembur?',p:'比萨 伦布',z:'能加班吗？',g:'lembur=加班'},
-{id:128,c:'work',i:'Gaji / Upah',p:'嘎吉 / 乌巴',z:'工资 / 报酬',g:''},
-{id:129,c:'work',i:'Izin / Cuti',p:'依斤 / 朱迪',z:'请假 / 休假',g:'izin=许可 cuti=休假'},
-{id:130,c:'work',i:'Mari diskusi',p:'马利 迪斯库西',z:'来讨论吧',g:'mari=来吧'},
-{id:131,c:'work',i:'Selesaikan ini',p:'色勒赛甘 依尼',z:'把这个完成',g:'selesaikan=完成'},
-{id:132,c:'work',i:'Saya setuju',p:'萨亚 色杜朱',z:'我同意',g:'setuju=同意'},
-{id:133,c:'work',i:'Saya tidak setuju',p:'萨亚 滴答 色杜朱',z:'我不同意',g:''},
-{id:134,c:'work',i:'Coba lagi',p:'佐巴 拉吉',z:'再试试',g:'coba=试 lagi=再'},
-// ===== 数字 (15+) =====
-{id:140,c:'num',i:'Nol / Satu',p:'诺 / 萨杜',z:'0 / 1',g:''},
-{id:141,c:'num',i:'Dua / Tiga',p:'杜瓦 / 迪嘎',z:'2 / 3',g:''},
-{id:142,c:'num',i:'Empat / Lima',p:'恩巴 / 利马',z:'4 / 5',g:''},
-{id:143,c:'num',i:'Enam / Tujuh',p:'厄南 / 杜朱',z:'6 / 7',g:''},
-{id:144,c:'num',i:'Delapan / Sembilan',p:'德拉班 / 森比兰',z:'8 / 9',g:''},
-{id:145,c:'num',i:'Sepuluh / Seratus',p:'色布鲁 / 色拉杜斯',z:'10 / 100',g:'se-=一 puluh=十 puluh=百'},
-{id:146,c:'num',i:'Seribu / Sejuta',p:'色利布 / 色朱达',z:'1000 / 100万',g:'ribu=千 juta=百万'},
-{id:147,c:'num',i:'Jam berapa?',p:'占 伯拉巴',z:'现在几点？',g:'jam=钟点'},
-{id:148,c:'num',i:'Hari / Minggu',p:'哈利 / 明古',z:'天 / 周',g:'minggu=星期'},
-{id:149,c:'num',i:'Bulan / Tahun',p:'布兰 / 达温',z:'月 / 年',g:''},
-{id:150,c:'num',i:'Hari ini / Besok',p:'哈利 依尼 / 伯索',z:'今天 / 明天',g:''},
-{id:151,c:'num',i:'Kemarin / Sekarang',p:'格马林 / 色嘎朗',z:'昨天 / 现在',g:''},
-{id:152,c:'num',i:'Nanti / Dulu',p:'南提 / 杜鲁',z:'待会儿 / 刚才',g:''},
-{id:153,c:'num',i:'Setengah jam',p:'色登阿 占',z:'半小时',g:'setengah=一半'},
-// ===== 住宿 (10+) =====
-{id:160,c:'hotel',i:'Ada kamar kosong?',p:'阿达 嘎马 高松',z:'有空房吗？',g:'kamar=房间 kosong=空'},
-{id:161,c:'hotel',i:'Saya sudah pesan',p:'萨亚 苏达 伯桑',z:'我已预订',g:'sudah=已经 pesan=预订'},
-{id:162,c:'hotel',i:'Semalam berapa?',p:'色马兰 伯拉巴',z:'一晚多少钱？',g:'semalam=一晚'},
-{id:163,c:'hotel',i:'Termasuk sarapan?',p:'德尔马苏 萨拉班',z:'含早餐吗？',g:'termasuk=包括 sarapan=早餐'},
-{id:164,c:'hotel',i:'Kunci kamar',p:'昆奇 嘎马',z:'房间钥匙/房卡',g:'kunci=钥匙'},
-{id:165,c:'hotel',i:'AC tidak dingin',p:'阿色 滴答 丁引',z:'空调不够冷',g:'AC=空调 dingin=冷'},
-{id:166,c:'hotel',i:'Air panas',p:'阿依 巴那斯',z:'热水',g:'panas=热'},
-{id:167,c:'hotel',i:'Sandi WiFi?',p:'桑迪 歪发',z:'WiFi密码？',g:'sandi=密码'},
-{id:168,c:'hotel',i:'Tolong bersihkan',p:'多龙 伯西甘',z:'请打扫一下',g:'bersih=干净'},
-// ===== 紧急 (15+) =====
-{id:170,c:'emerg',i:'Tolong!',p:'多龙',z:'救命！/帮帮忙！',g:'tolong万能词=请/救命'},
-{id:171,c:'emerg',i:'Saya sakit',p:'萨亚 萨给',z:'我病了',g:'sakit=病/痛'},
-{id:172,c:'emerg',i:'Saya demam',p:'萨亚 德曼',z:'我发烧了',g:'demam=发烧'},
-{id:173,c:'emerg',i:'Saya batuk',p:'萨亚 巴杜',z:'我咳嗽',g:'batuk=咳嗽'},
-{id:174,c:'emerg',i:'Saya pusing',p:'萨亚 普辛',z:'我头晕',g:'pusing=头晕'},
-{id:175,c:'emerg',i:'Rumah sakit',p:'鲁马 萨给',z:'医院',g:'rumah=房子 sakit=病'},
-{id:176,c:'emerg',i:'Panggil dokter!',p:'邦依 多特',z:'叫医生！',g:'panggil=叫 dokter=医生'},
-{id:177,c:'emerg',i:'Apotek',p:'阿波德',z:'药店',g:''},
-{id:178,c:'emerg',i:'Saya tersesat',p:'萨亚 德尔色萨',z:'我迷路了',g:'tersesat=迷路'},
-{id:179,c:'emerg',i:'Dompet hilang',p:'东贝 希朗',z:'钱包丢了',g:'hilang=丢失'},
-{id:180,c:'emerg',i:'Polisi',p:'波利西',z:'警察',g:''},
-{id:181,c:'emerg',i:'Darurat 112',p:'达鲁拉',z:'紧急电话112',g:'darurat=紧急'},
-{id:182,c:'emerg',i:'Kedutaan Tiongkok',p:'格杜达安 中果',z:'中国大使馆',g:'kedutaan=使馆'},
-// ===== 日常常用 (40+) =====
-{id:190,c:'other',i:'Ya / Tidak',p:'亚 / 滴答',z:'是 / 不是',g:''},
-{id:191,c:'other',i:'Bisa / Tidak bisa',p:'比萨 / 滴答 比萨',z:'能 / 不能',g:''},
-{id:192,c:'other',i:'Ada / Tidak ada',p:'阿达 / 滴答 阿达',z:'有 / 没有',g:''},
-{id:193,c:'other',i:'Mau / Tidak mau',p:'矛 / 滴答 矛',z:'要 / 不要',g:''},
-{id:194,c:'other',i:'Saya suka',p:'萨亚 苏卡',z:'我喜欢',g:'suka=喜欢'},
-{id:195,c:'other',i:'Saya tahu',p:'萨亚 达胡',z:'我知道',g:'tahu=知道,读作"达胡"'},
-{id:196,c:'other',i:'Saya bisa',p:'萨亚 比萨',z:'我会/我能',g:''},
-{id:197,c:'other',i:'Saya mau pergi',p:'萨亚 矛 伯尔吉',z:'我要走了',g:'pergi=去/走'},
-{id:198,c:'other',i:'Saya mau pulang',p:'萨亚 矛 普朗',z:'我要回家',g:'pulang=回家'},
-{id:199,c:'other',i:'Sudah / Belum',p:'苏达 / 柏伦',z:'已经 / 还没',g:'常用问答：Sudah? Belum.'},
-{id:200,c:'other',i:'Banyak / Sedikit',p:'班亚 / 色迪基',z:'多 / 少',g:''},
-{id:201,c:'other',i:'Bagus / Jelek',p:'巴古斯 / 杰勒',z:'好 / 坏',g:'bagus=好'},
-{id:202,c:'other',i:'Besar / Kecil',p:'伯萨尔 / 克奇',z:'大 / 小',g:''},
-{id:203,c:'other',i:'Panas / Dingin',p:'巴那斯 / 丁引',z:'热 / 冷',g:'panas=热 dingin=冷'},
-{id:204,c:'other',i:'Baru / Lama',p:'巴鲁 / 拉马',z:'新 / 旧 / 久',g:'baru=新'},
-{id:205,c:'other',i:'Cepat / Lambat',p:'车巴 / 兰巴',z:'快 / 慢',g:'cepat=快'},
-{id:206,c:'other',i:'Kanan / Kiri',p:'嘎南 / 给利',z:'右 / 左',g:''},
-{id:207,c:'other',i:'Atas / Bawah',p:'阿达斯 / 巴瓦',z:'上面 / 下面',g:''},
-{id:208,c:'other',i:'Depan / Belakang',p:'德班 / 伯拉康',z:'前面 / 后面',g:''},
-{id:209,c:'other',i:'Dalam / Luar',p:'达兰 / 卢瓦',z:'里面 / 外面',g:''},
-{id:210,c:'other',i:'Di sini / Di sana',p:'滴 西尼 / 滴 萨那',z:'在这里 / 在那里',g:'di=在'},
-{id:211,c:'other',i:'Sekarang / Nanti',p:'色嘎朗 / 南提',z:'现在 / 待会儿',g:''},
-{id:212,c:'other',i:'Cuaca panas',p:'朱阿查 巴那斯',z:'天气热',g:'cuaca=天气'},
-{id:213,c:'other',i:'Hari ini hujan',p:'哈利 依尼 胡占',z:'今天下雨',g:'hujan=雨'},
-{id:214,c:'other',i:'Ayah / Ibu',p:'阿亚 / 依布',z:'爸爸 / 妈妈',g:'ibu也用于尊称女性'},
-{id:215,c:'other',i:'Kakak / Adik',p:'嘎嘎 / 阿迪',z:'哥哥姐姐 / 弟弟妹妹',g:'不分性别，看上下文'},
-{id:216,c:'other',i:'Teman / Sahabat',p:'德曼 / 萨哈巴',z:'朋友 / 好友',g:'teman=朋友'},
-{id:217,c:'other',i:'Kantor / Pabrik',p:'甘多 / 巴布利',z:'办公室 / 工厂',g:''},
-{id:218,c:'other',i:'Makanan / Minuman',p:'马卡南 / 米努曼',z:'食物 / 饮料',g:'-an名词后缀'},
-{id:219,c:'other',i:'Kamar mandi',p:'嘎马 曼迪',z:'厕所/浴室',g:'kamar=房间 mandi=洗澡'},
-{id:220,c:'other',i:'Cantik / Ganteng',p:'占迪 / 甘登',z:'漂亮 / 帅气',g:'夸人常用'},
-{id:221,c:'other',i:'Saya lelah',p:'萨亚 雷拉',z:'我累了',g:'lelah=疲劳'},
-{id:222,c:'other',i:'Saya sibuk',p:'萨亚 西布',z:'我很忙',g:'sibuk=忙'},
-{id:223,c:'other',i:'Saya senang',p:'萨亚 色囊',z:'我很开心',g:'senang=高兴'},
-{id:224,c:'other',i:'Saya sedih',p:'萨亚 色迪',z:'我难过',g:'sedih=伤心'},
-{id:225,c:'other',i:'Awas!',p:'阿瓦斯',z:'小心！当心！',g:'awas=注意/小心'},
-{id:226,c:'other',i:'Ayo!',p:'阿哟',z:'加油！来吧！',g:'表示鼓励或催促'},
-{id:227,c:'other',i:'Nanti dulu',p:'南提 杜鲁',z:'稍等一下',g:'委婉说法'},
-{id:228,c:'other',i:'Mari makan',p:'马利 马甘',z:'吃饭了(开饭)',g:'mari=来吧'},
-// ===== 电话 (10+) =====
-{id:230,c:'phone',i:'Halo',p:'哈咯',z:'喂',g:''},
-{id:231,c:'phone',i:'Bicara dengan ...?',p:'比扎拉 登安',z:'找…听电话',g:'dengan=和'},
-{id:232,c:'phone',i:'Ini saya',p:'依尼 萨亚',z:'是我',g:''},
-{id:233,c:'phone',i:'Tunggu sebentar',p:'东古 色本达',z:'稍等一下',g:'tunggu=等'},
-{id:234,c:'phone',i:'Salah sambung',p:'萨拉 桑崩',z:'打错了',g:'salah=错'},
-{id:235,c:'phone',i:'Tidak ada',p:'滴答 阿达',z:'没有这个人/不在',g:''},
-{id:236,c:'phone',i:'Saya sambungkan',p:'萨亚 萨崩甘',z:'我帮您转接',g:''},
-{id:237,c:'phone',i:'Sinyal kurang',p:'西尼亚 古朗',z:'信号不好',g:'kurang=不够'},
-{id:238,c:'phone',i:'Telepon lagi nanti',p:'德勒彭 拉吉 南提',z:'待会儿再打',g:'telepon=电话(动词)'},
-{id:239,c:'phone',i:'SMS / WhatsApp',p:'埃斯埃姆埃斯 / 哇',z:'短信 / WhatsApp',g:''},
+{id:1,c:'greet',i:'Selamat pagi',p:'色拉马 巴吉',z:'早上好(~11点)'},{id:2,c:'greet',i:'Selamat siang',p:'色拉马 西央',z:'中午好(11-15点)'},{id:3,c:'greet',i:'Selamat sore',p:'色拉马 索雷',z:'下午好(15-18点)'},{id:4,c:'greet',i:'Selamat malam',p:'色拉马 马兰',z:'晚上好(18点后)'},{id:5,c:'greet',i:'Apa kabar?',p:'阿巴 嘎巴尔',z:'你好吗？'},{id:6,c:'greet',i:'Baik-baik saja',p:'巴依巴依 萨加',z:'挺好的'},{id:7,c:'greet',i:'Nama saya ...',p:'那马 萨亚',z:'我叫…'},{id:8,c:'greet',i:'Senang bertemu',p:'色囊 贝尔特木',z:'很高兴认识你'},{id:9,c:'greet',i:'Sampai jumpa',p:'桑拜 均巴',z:'再见'},{id:10,c:'greet',i:'Selamat tinggal',p:'色拉马 丁嘎',z:'再见(离开者说)'},{id:11,c:'greet',i:'Selamat jalan',p:'色拉马 扎兰',z:'一路平安(送别说)'},{id:12,c:'greet',i:'Permisi',p:'伯尔米西',z:'借过/打扰了'},{id:13,c:'greet',i:'Maaf',p:'马阿夫',z:'对不起'},{id:14,c:'greet',i:'Tidak apa-apa',p:'滴答 阿巴阿巴',z:'没关系'},{id:15,c:'greet',i:'Terima kasih',p:'德利马 嘎西',z:'谢谢'},{id:16,c:'greet',i:'Terima kasih banyak',p:'德利马 嘎西 班亚',z:'非常感谢'},{id:17,c:'greet',i:'Sama-sama',p:'萨马萨马',z:'不客气'},{id:18,c:'greet',i:'Selamat datang',p:'色拉马 达当',z:'欢迎'},{id:19,c:'greet',i:'Dari mana?',p:'达利 马那',z:'从哪里来？'},{id:20,c:'greet',i:'Dari Tiongkok',p:'达利 中果',z:'我从中国来'},{id:21,c:'greet',i:'Sudah lama?',p:'苏达 拉马',z:'来了多久？'},
+{id:30,c:'shop',i:'Berapa harganya?',p:'伯拉巴 哈嘎尼亚',z:'多少钱？'},{id:31,c:'shop',i:'Boleh kurang?',p:'波雷 古朗',z:'能便宜点吗？'},{id:32,c:'shop',i:'Mahal / Murah',p:'马哈 / 木拉',z:'贵 / 便宜'},{id:33,c:'shop',i:'Terlalu mahal!',p:'德尔拉鲁 马哈',z:'太贵了！'},{id:34,c:'shop',i:'Ada diskon?',p:'阿达 迪斯公',z:'有折扣吗？'},{id:35,c:'shop',i:'Saya mau beli',p:'萨亚 矛 伯利',z:'我要买'},{id:36,c:'shop',i:'Bisa coba?',p:'比萨 佐巴',z:'可以试吗？'},{id:37,c:'shop',i:'Yang ini/itu',p:'洋 依尼/依杜',z:'这个/那个'},{id:38,c:'shop',i:'Ukuran?',p:'乌库兰',z:'什么尺码？'},{id:39,c:'shop',i:'Besar / Kecil',p:'伯萨尔 / 克奇',z:'大 / 小'},{id:40,c:'shop',i:'Warna merah/putih/hitam',p:'瓦尔那 梅拉/布提/希淡',z:'红/白/黑'},{id:41,c:'shop',i:'Warna biru/hijau/kuning',p:'瓦尔那 比鲁/希搞/古宁',z:'蓝/绿/黄'},{id:42,c:'shop',i:'Ada warna lain?',p:'阿达 瓦尔那 拉因',z:'有其他颜色吗？'},{id:43,c:'shop',i:'Bungkus ya',p:'崩库斯 亚',z:'包起来'},{id:44,c:'shop',i:'Bayar di sini?',p:'巴亚 滴 西尼',z:'在这付吗？'},{id:45,c:'shop',i:'Bisa tukar?',p:'比萨 杜卡',z:'可以换吗？'},
+{id:50,c:'food',i:'Saya lapar /haus',p:'拉巴 / 哈乌斯',z:'我饿了 / 我渴了'},{id:51,c:'food',i:'Menu tolong',p:'美努 多龙',z:'请拿菜单'},{id:52,c:'food',i:'Mau pesan ini',p:'矛 伯桑 依尼',z:'我要点这个'},{id:53,c:'food',i:'Nasi goreng',p:'那西 高冷',z:'印尼炒饭'},{id:54,c:'food',i:'Mie goreng',p:'米 高冷',z:'炒面'},{id:55,c:'food',i:'Ayam goreng/bakar',p:'阿扬 高冷/巴卡',z:'炸鸡/烤鸡'},{id:56,c:'food',i:'Ikan bakar',p:'依甘 巴卡',z:'烤鱼'},{id:57,c:'food',i:'Sate ayam',p:'沙爹 阿扬',z:'鸡肉沙爹'},{id:58,c:'food',i:'Bakso',p:'巴克索',z:'牛肉丸汤'},{id:59,c:'food',i:'Gado-gado',p:'嘎多嘎多',z:'花生酱沙拉'},{id:60,c:'food',i:'Soto / Rendang',p:'索多 / 伦当',z:'鸡汤面 / 仁当牛肉'},{id:61,c:'food',i:'Tidak pedas',p:'滴答 伯达斯',z:'不要辣'},{id:62,c:'food',i:'Pedas sedikit',p:'伯达斯 色迪基',z:'微辣'},{id:63,c:'food',i:'Enak sekali!',p:'依那 色嘎里',z:'太好吃了！'},{id:64,c:'food',i:'Es teh manis',p:'依斯 德 马尼斯',z:'冰甜茶'},{id:65,c:'food',i:'Kopi / Air putih',p:'考比 / 阿依 布提',z:'咖啡 / 白开水'},{id:66,c:'food',i:'Jus jeruk',p:'朱斯 杰鲁',z:'橙汁'},{id:67,c:'food',i:'Tambah lagi',p:'丹巴 拉吉',z:'再加一份'},{id:68,c:'food',i:'Minta bon',p:'民打 波恩',z:'结账'},{id:69,c:'food',i:'Vegetarian / Halal?',p:'维格达利安 / 哈拉',z:'吃素 / 清真吗？'},
+{id:75,c:'trans',i:'Ke mana?',p:'格 马那',z:'去哪里？'},{id:76,c:'trans',i:'Mau ke ...',p:'矛 格',z:'我要去…'},{id:77,c:'trans',i:'Berapa ongkos?',p:'伯拉巴 昂科斯',z:'车费多少？'},{id:78,c:'trans',i:'Taksi / Ojek',p:'达西 / 奥杰克',z:'出租 / 摩的'},{id:79,c:'trans',i:'Gojek / Grab',p:'够杰克 / 格拉布',z:'网约摩托/车'},{id:80,c:'trans',i:'Lurus terus',p:'鲁鲁斯 德鲁斯',z:'直走'},{id:81,c:'trans',i:'Belok kiri/kanan',p:'贝洛 给利/嘎南',z:'左转/右转'},{id:82,c:'trans',i:'Berhenti di sini',p:'伯亨提 滴 西尼',z:'在这停'},{id:83,c:'trans',i:'Dekat / Jauh',p:'德嘎 / 扎乌',z:'近 / 远'},{id:84,c:'trans',i:'Bandara / Stasiun',p:'班达拉 / 斯大逊',z:'机场 / 火车站'},{id:85,c:'trans',i:'Macet!',p:'马切',z:'堵车！'},{id:86,c:'trans',i:'Kiri! (摩的)',p:'给利',z:'左边停'},{id:87,c:'trans',i:'Pelan-pelan',p:'伯兰伯兰',z:'慢一点'},{id:88,c:'trans',i:'Jalan-jalan',p:'扎兰扎兰',z:'逛街散步'},
+{id:95,c:'work',i:'Selamat pagi rekan',p:'色拉马 巴吉 勒干',z:'早上好各位'},{id:96,c:'work',i:'Bisa tolong bantu?',p:'比萨 多龙 班杜',z:'能帮忙吗？'},{id:97,c:'work',i:'Tidak mengerti',p:'滴答 蒙额尔提',z:'不明白'},{id:98,c:'work',i:'Bisa ulangi?',p:'比萨 乌朗依',z:'能再说一遍？'},{id:99,c:'work',i:'Bicara pelan',p:'比扎拉 伯兰',z:'请说慢点'},{id:100,c:'work',i:'Ada rapat?',p:'阿达 拉巴',z:'有会议吗？'},{id:101,c:'work',i:'Laporan siap',p:'拉波朗 西阿',z:'报告准备好了'},{id:102,c:'work',i:'Deadline kapan?',p:'德来 嘎班',z:'截止日期？'},{id:103,c:'work',i:'Bagaimana progres?',p:'巴盖马那 波罗格勒斯',z:'进展如何？'},{id:104,c:'work',i:'Kirim email',p:'给林 依美',z:'发邮件'},{id:105,c:'work',i:'Tanda tangan sini',p:'丹达 当安 西尼',z:'在这签字'},{id:106,c:'work',i:'Nomor WA?',p:'诺莫 哇',z:'WhatsApp号？'},{id:107,c:'work',i:'Saya butuh info',p:'萨亚 布杜 因佛',z:'我需要信息'},{id:108,c:'work',i:'Kerja bagus!',p:'格扎 巴古斯',z:'做得很好！'},{id:109,c:'work',i:'Hati-hati',p:'哈迪哈迪',z:'小心/保重'},{id:110,c:'work',i:'Saya akan telat',p:'萨亚 阿甘 德拉',z:'我会迟到'},{id:111,c:'work',i:'Bisa lembur?',p:'比萨 伦布',z:'能加班吗？'},{id:112,c:'work',i:'Gaji / Cuti',p:'嘎吉 / 朱迪',z:'工资 / 休假'},{id:113,c:'work',i:'Mari diskusi',p:'马利 迪斯库西',z:'来讨论吧'},{id:114,c:'work',i:'Saya setuju / tidak',p:'萨亚 色杜朱 / 滴答',z:'我同意/不同意'},{id:115,c:'work',i:'Coba lagi',p:'佐巴 拉吉',z:'再试试'},{id:116,c:'work',i:'Selesaikan ini',p:'色勒赛甘 依尼',z:'请完成这个'},
+{id:125,c:'num',i:'Nol 1-10',p:'诺 萨杜 杜瓦 迪嘎 恩巴 利马 厄南 杜朱 德拉班 森比兰',z:'0-10'},{id:126,c:'num',i:'11-20',p:'色伯拉斯~杜瓦 布鲁',z:'11~20'},{id:127,c:'num',i:'100 / 1000 / 1jt',p:'色拉杜斯 / 色利布 / 色朱达',z:'一百/一千/一百万'},{id:128,c:'num',i:'Jam berapa?',p:'占 伯拉巴',z:'几点了？'},{id:129,c:'num',i:'Hari ini / Besok',p:'哈利 依尼 / 伯索',z:'今天 / 明天'},{id:130,c:'num',i:'Kemarin / Sekarang',p:'格马林 / 色嘎朗',z:'昨天 / 现在'},{id:131,c:'num',i:'Nanti / Dulu',p:'南提 / 杜鲁',z:'待会儿 / 刚才'},{id:132,c:'num',i:'Bulan / Tahun',p:'布兰 / 达温',z:'月 / 年'},
+{id:140,c:'hotel',i:'Ada kamar kosong?',p:'阿达 嘎马 高松',z:'有空房吗？'},{id:141,c:'hotel',i:'Sudah pesan',p:'苏达 伯桑',z:'已预订'},{id:142,c:'hotel',i:'Semalam berapa?',p:'色马兰 伯拉巴',z:'一晚多少钱？'},{id:143,c:'hotel',i:'Termasuk sarapan?',p:'德尔马苏 萨拉班',z:'含早餐吗？'},{id:144,c:'hotel',i:'Kunci kamar',p:'昆奇 嘎马',z:'房卡/钥匙'},{id:145,c:'hotel',i:'AC tidak dingin',p:'阿色 滴答 丁引',z:'空调不够冷'},{id:146,c:'hotel',i:'Air panas',p:'阿依 巴那斯',z:'热水'},{id:147,c:'hotel',i:'Sandi WiFi?',p:'桑迪 歪发',z:'WiFi密码？'},{id:148,c:'hotel',i:'Tolong bersihkan',p:'多龙 伯西甘',z:'请打扫一下'},
+{id:155,c:'emerg',i:'Tolong!',p:'多龙',z:'救命！'},{id:156,c:'emerg',i:'Saya sakit/demam',p:'萨亚 萨给/德曼',z:'我病了/发烧'},{id:157,c:'emerg',i:'Saya batuk/pusing',p:'巴杜/普辛',z:'我咳嗽/头晕'},{id:158,c:'emerg',i:'Rumah sakit',p:'鲁马 萨给',z:'医院'},{id:159,c:'emerg',i:'Panggil dokter!',p:'邦依 多特',z:'叫医生！'},{id:160,c:'emerg',i:'Apotek',p:'阿波德',z:'药店'},{id:161,c:'emerg',i:'Tersesat / Hilang',p:'德尔色萨 / 希朗',z:'迷路 / 丢东西'},{id:162,c:'emerg',i:'Polisi / Darurat 112',p:'波利西 / 达鲁拉',z:'警察 / 紧急电话'},{id:163,c:'emerg',i:'Kedutaan Tiongkok',p:'格杜达安 中果',z:'中国大使馆'},
+{id:170,c:'other',i:'Ya / Tidak',p:'亚 / 滴答',z:'是 / 不是'},{id:171,c:'other',i:'Bisa / Tidak bisa',p:'比萨 / 滴答 比萨',z:'能 / 不能'},{id:172,c:'other',i:'Ada / Tidak ada',p:'阿达 / 滴答 阿达',z:'有 / 没有'},{id:173,c:'other',i:'Mau / Tidak mau',p:'矛 / 滴答 矛',z:'要 / 不要'},{id:174,c:'other',i:'Saya suka /tahu /bisa',p:'苏卡 /达胡 /比萨',z:'我喜欢/知道/会'},{id:175,c:'other',i:'Saya mau pergi/pulang',p:'矛 伯尔吉/普朗',z:'我要走了/回家'},{id:176,c:'other',i:'Sudah / Belum',p:'苏达 / 柏伦',z:'已经 / 还没'},{id:177,c:'other',i:'Banyak / Sedikit',p:'班亚 / 色迪基',z:'多 / 少'},{id:178,c:'other',i:'Bagus / Jelek',p:'巴古斯 / 杰勒',z:'好 / 坏'},{id:179,c:'other',i:'Panas / Dingin',p:'巴那斯 / 丁引',z:'热 / 冷'},{id:180,c:'other',i:'Cepat / Lambat',p:'车巴 / 兰巴',z:'快 / 慢'},{id:181,c:'other',i:'Atas / Bawah',p:'阿达斯 / 巴瓦',z:'上面 / 下面'},{id:182,c:'other',i:'Depan / Belakang',p:'德班 / 伯拉康',z:'前面 / 后面'},{id:183,c:'other',i:'Dalam / Luar',p:'达兰 / 卢瓦',z:'里面 / 外面'},{id:184,c:'other',i:'Di sini / Di sana',p:'滴 西尼 / 滴 萨那',z:'在这里 / 在那里'},{id:185,c:'other',i:'Cuaca panas',p:'朱阿查 巴那斯',z:'天气热'},{id:186,c:'other',i:'Hari ini hujan',p:'哈利 依尼 胡占',z:'今天下雨'},{id:187,c:'other',i:'Ayah / Ibu',p:'阿亚 / 依布',z:'爸爸 / 妈妈'},{id:188,c:'other',i:'Kakak / Adik',p:'嘎嘎 / 阿迪',z:'哥哥姐 / 弟弟妹'},{id:189,c:'other',i:'Teman / Sahabat',p:'德曼 / 萨哈巴',z:'朋友 / 好友'},{id:190,c:'other',i:'Kamar mandi',p:'嘎马 曼迪',z:'厕所/浴室'},{id:191,c:'other',i:'Makanan / Minuman',p:'马卡南 / 米努曼',z:'食物 / 饮料'},{id:192,c:'other',i:'Cantik / Ganteng',p:'占迪 / 甘登',z:'漂亮 / 帅气'},{id:193,c:'other',i:'Saya lelah/sibuk/senang/sedih',p:'雷拉/西布/色囊/色迪',z:'我累了/忙/开心/难过'},{id:194,c:'other',i:'Awas! / Ayo!',p:'阿瓦斯 / 阿哟',z:'当心！/ 加油！'},{id:195,c:'other',i:'Nanti dulu',p:'南提 杜鲁',z:'稍等一下'},{id:196,c:'other',i:'Mari makan',p:'马利 马甘',z:'开饭了'},
+{id:205,c:'phone',i:'Halo',p:'哈咯',z:'喂'},{id:206,c:'phone',i:'Bicara dengan ...?',p:'比扎拉 登安',z:'找…听电话'},{id:207,c:'phone',i:'Ini saya / Tunggu',p:'依尼 萨亚 / 东古',z:'是我 / 稍等'},{id:208,c:'phone',i:'Salah sambung',p:'萨拉 桑崩',z:'打错了'},{id:209,c:'phone',i:'Tidak ada',p:'滴答 阿达',z:'不在'},{id:210,c:'phone',i:'Saya sambungkan',p:'萨亚 萨崩甘',z:'帮您转接'},{id:211,c:'phone',i:'Sinyal kurang',p:'西尼亚 古朗',z:'信号不好'},{id:212,c:'phone',i:'Telepon lagi nanti',p:'德勒彭 拉吉 南提',z:'待会儿再打'},{id:213,c:'phone',i:'Kirim WA',p:'给林 哇',z:'发WA消息'},
 ];
-// ====== 状态 ======
-var FK='ifv3',PK='ipv3';
-var ac='all'
+// === STATE ===
+var FK='ifv4',PK='ipv4';
+var ac='all',sq='',f=JSON.parse(localStorage.getItem(FK)||'[]'),pr=JSON.parse(localStorage.getItem(PK)||'{}');
+var qq=[],qi=0,qc='all';
+
+function init(){
+  rC();rP();uP();
+  if(/MicroMessenger/i.test(navigator.userAgent))document.getElementById('bwx').style.display='block';
+  document.getElementById('sin').oninput=sS;
+}
+function rC(){var h='';for(var i=0;i<CA.length;i++){var c=CA[i];h+='<div class="ctab'+(ac===c.i?' act':'')+'" onclick="sC(\''+c.i+'\')">'+c.c+' '+c.n+'</div>';}document.getElementById('ct').innerHTML=h;}
+function sC(id){ac=id;sq='';document.getElementById('sin').value='';rC();rP();}
+function sS(){sq=document.getElementById('sin').value.trim().toLowerCase();if(sq){ac='all';rC();}rP();}
+function gF(){var l=P;if(ac!=='all')l=l.filter(function(p){return p.c===ac;});if(sq)l=l.filter(function(p){return p.i.toLowerCase().indexOf(sq)>=0||p.z.indexOf(sq)>=0||p.p.indexOf(sq)>=0;});return l;}
+function rP(){
+  var l=gF(),el=document.getElementById('pl'),em=document.getElementById('emp');
+  if(l.length===0){el.innerHTML='';em.style.display='block';return;}
+  em.style.display='none';var h='';
+  for(var i=0;i<l.length;i++){var p=l[i],fv=f.indexOf(p.id)>=0,co=CA.find(function(c){return c.i===p.c;});
+    h+='<div class="pc" id="c'+p.id+'" onclick="tZ('+p.id+')"><div class="rw"><div><div class="id">'+p.i+'</div><div class="pr">🔊 '+p.p+'</div><div class="zh">🇨🇳 '+p.z+'</div>'+(p.g?'<div class="gn">💡 '+p.g+'</div>':'')+'</div><div class="rt"><span class="tag '+(TG[p.c]||'tg0')+'">'+(co?co.c:'')+' '+(co?co.n:'')+'</span><button class="btn btn-spk" onclick="event.stopPropagation();sp(\''+p.i.replace(/'/g,"\\'")+'\')">🔊</button><button class="btn btn-fav'+(fv?' act':'')+'" onclick="event.stopPropagation();tF('+p.id+')">'+(fv?'❤️':'🤍')+'</button></div></div><div class="hint">👆 点击查看中文</div></div>';}
+  el.innerHTML=h;rF();
+}
+function tZ(id){var c=document.getElementById('c'+id);if(!c)return;c.classList.add('s');var t=new Date().toISOString().slice(0,10);if(!pr[t])pr[t]=[];if(pr[t].indexOf(id)<0){pr[t].push(id);localStorage.setItem(PK,JSON.stringify(pr));uP();}}
+
+// === SPEAK ===
+function sp(t){
+  if('speechSynthesis'in window){
+    try{
+      window.speechSynthesis.cancel();
+      var u=new SpeechSynthesisUtterance(t);u.lang='id-ID';u.rate=0.85;
+      window.speechSynthesis.speak(u);tt('🔊 朗读中…');return;
+    }catch(e){}
+  }
+  // audio fallback
+  var a=document.getElementById('aud');
+  if(!a)return;
+  a.src='https://translate.google.com/translate_tts?ie=UTF-8&client=tw-ob&tl=id&q='+encodeURIComponent(t);
+  a.play().then(function(){tt('🔊 正在朗读');}).catch(function(){tt('⚠️ 建议安装Chrome');document.getElementById('bwx').style.display='block';});
+}
+function hB(){document.getElementById('bwx').style.display='none';}
+function tF(id){var i=f.indexOf(id);if(i>=0)f.splice(i,1);else f.push(id);localStorage.setItem(FK,JSON.stringify(f));rP();}
+function rF(){
+  var el=document.getElementById('fl'),em=document.getElementById('fe'),fp=P.filter(function(p){return f.indexOf(p.id)>=0;});
+  if(fp.length===0){el.innerHTML='';em.style.display='block';return;}
+  em.style.display='none';var h='';
+  for(var i=0;i<fp.length;i++){var p=fp[i],co=CA.find(function(c){return c.i===p.c;});
+    h+='<div class="pc s"><div class="rw"><div><div class="id">'+p.i+'</div><div class="pr">🔊 '+p.p+'</div><div class="zh">🇨🇳 '+p.z+'</div></div><div class="rt"><span class="tag '+(TG[p.c]||'tg0')+'">'+(co?co.c:'')+' '+(co?co.n:'')+'</span><button class="btn btn-spk" onclick="event.stopPropagation();sp(\''+p.i.replace(/'/g,"\\'")+'\')">🔊</button><button class="btn btn-fav act" onclick="event.stopPropagation();tF('+p.id+')">❤️</button></div></div></div>';}
+  el.innerHTML=h;
+}
+function uP(){var t=new Date().toISOString().slice(0,10),c=(pr[t]||[]).length,tt=P.length;document.getElementById('pt').textContent=c+'/'+tt;document.getElementById('pf').style.width=(tt?Math.round(c/tt*100):0)+'%';}
+function iQ(){rQF();var pool=qc==='all'?P.slice():P.filter(function(p){return p.c===qc;});if(pool.length===0){tt('该分类没有短语');pool=P.slice();qc='all';rQF();}qq=pool.sort(function(){return Math.random()-0.5;});qi=0;sQ();}
+function rQF(){var h='';for(var i=0;i<CA.length;i++){var c=CA[i];h+='<div class="ch'+(qc===c.i?' act':'')+'" onclick="sQC(\''+c.i+'\')">'+c.c+' '+c.n+'</div>';}document.getElementById('qf').innerHTML=h;}
+function sQC(id){qc=id;iQ();}
+function sQ(){if(qi>=qq.length){document.getElementById('fe').textContent='🎉 全部完成！';document.getElementById('fp').textContent='';document.getElementById('ft').textContent='选个分类重新开始';document.getElementById('qb').style.display='none';uQS();return;}document.getElementById('qb').style.display='';var p=qq[qi];document.getElementById('fe').textContent=p.i;document.getElementById('fp').textContent='🔊 '+p.p;document.getElementById('fp').style.display='block';document.getElementById('ft').textContent='👆 点击翻转';uQS();}
+function flip(){if(qi>=qq.length){iQ();return;}var p=qq[qi];if(document.getElementById('fe').textContent===p.i){document.getElementById('fe').textContent=p.z;document.getElementById('fp').style.display='none';document.getElementById('ft').textContent='👆 点回印尼语';}else{document.getElementById('fe').textContent=p.i;document.getElementById('fp').textContent='🔊 '+p.p;document.getElementById('fp').style.display='block';document.getElementById('ft').textContent='👆 点击翻转';}}
+function ans(d){if(qi>=qq.length)return;if(d==='h')qq.push(qq[qi]);var p=qq[qi];var t=new Date().toISOString().slice(0,10);if(!pr[t])pr[t]=[];if(pr[t].indexOf(p.id)<0){pr[t].push(p.id);localStorage.setItem(PK,JSON.stringify(pr));uP();}nQ();}
+function nQ(){qi++;sQ();}
+function uQS(){var r=qq.length-qi;document.getElementById('qs').textContent=r>0?'📝 '+(Math.min(qi+1,qq.length))+'/'+qq.length+' | 剩余 '+r:'';}
+function tc(el){el.parentElement.classList.toggle('op');}
+function sw(p){var ps=document.querySelectorAll('.pg');for(var i=0;i<ps.length;i++)ps[i].classList.remove('act');var ns=document.querySelectorAll('.ni');for(var i=0;i<ns.length;i++)ns[i].classList.remove('act');document.getElementById('p-'+p).classList.add('act');document.querySelector('[data-p="'+p+'"]').classList.add('act');if(p==='quiz')iQ();if(p==='fav')rF();}
+var _tt=0;function tt(m){var t=document.getElementById('tt');t.textContent=m;t.classList.add('s');clearTimeout(_tt);_tt=setTimeout(function(){t.classList.remove('s');},2000);}
+document.addEventListener('DOMContentLoaded',init);
+if('speechSynthesis'in window)speechSynthesis.onvoiceschanged=function(){speechSynthesis.getVoices();};
+</script></body></html>
